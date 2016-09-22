@@ -9,6 +9,5 @@
   when: item.state == "present"
   
 - name: Remove user accounts
-  mysql_user: login_user=youruser login_password=yourpassword name="{{ item.user }}" state=absent
-  with_itmes: user
-  when: item.state == "absent"
+  mysql_user: login_user=youruser login_password=yourpassword name="{{ item.user }}" state="{{ item.state }}" login_unix_socket="{{connect}}"
+  with_items: user
