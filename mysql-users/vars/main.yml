@@ -1,0 +1,16 @@
+user:
+
+- user: fred
+  password: 12345
+  priv: "*.*:SELECT"
+  state: absent
+
+- user: bob
+  password: 12345
+  priv: "*.*:ALL"
+  state: absent
+
+- user: eagle
+  password: 12345
+  priv: "*.*:ALL"
+  state: absent

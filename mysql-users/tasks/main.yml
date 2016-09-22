@@ -1,0 +1,9 @@
+---
+
+- name: Include MySQL variables
+  include_vars: "mysql.yml"
+
+- name: Create user accounts
+  mysql_user: user="{{ item.user }}" password="{{item.password}}" priv="{{item.priv}}" login_unix_socket="{{connect}}"
+  with_items: user
+  when: item.state == "present"
