@@ -1,1 +1,2 @@
-connect: /mnt/database/mysql/mysql.sock
+# Put the location of your mysql.sock here
+connect: /var/lib/mysql/mysql.sock
