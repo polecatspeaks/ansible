@@ -7,3 +7,7 @@
   mysql_user: user="{{ item.user }}" password="{{item.password}}" priv="{{item.priv}}" login_unix_socket="{{connect}}"
   with_items: user
   when: item.state == "present"
+  
+- name: Remove user accounts
+  mysql_user: login_user=youruser login_password=yourpassword name="{{ item.user }}" state="{{ item.state }}" login_unix_socket="{{connect}}"
+  with_items: user
